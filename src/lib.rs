@@ -229,132 +229,6 @@ impl Deref for DMA {
 }
 #[doc = "DMA Controller Configuration and Control"]
 pub mod dma;
-#[doc = "DIO Interface and Digital Pad control"]
-pub struct DIO {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for DIO {}
-impl DIO {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const dio::RegisterBlock {
-        0x4000_0700 as *const _
-    }
-}
-impl Deref for DIO {
-    type Target = dio::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*DIO::ptr() }
-    }
-}
-#[doc = "DIO Interface and Digital Pad control"]
-pub mod dio;
-#[doc = "SPI Interface Configuration and Control"]
-pub struct SPI0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for SPI0 {}
-impl SPI0 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const spi0::RegisterBlock {
-        0x4000_0800 as *const _
-    }
-}
-impl Deref for SPI0 {
-    type Target = spi0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*SPI0::ptr() }
-    }
-}
-#[doc = "SPI Interface Configuration and Control"]
-pub mod spi0;
-#[doc = "SPI Interface Configuration and Control"]
-pub struct SPI1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for SPI1 {}
-impl SPI1 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const spi1::RegisterBlock {
-        0x4000_0900 as *const _
-    }
-}
-impl Deref for SPI1 {
-    type Target = spi1::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*SPI1::ptr() }
-    }
-}
-#[doc = "SPI Interface Configuration and Control"]
-pub mod spi1;
-#[doc = "PCM Interface Configuration and Control"]
-pub struct PCM {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for PCM {}
-impl PCM {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const pcm::RegisterBlock {
-        0x4000_0a00 as *const _
-    }
-}
-impl Deref for PCM {
-    type Target = pcm::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*PCM::ptr() }
-    }
-}
-#[doc = "PCM Interface Configuration and Control"]
-pub mod pcm;
-#[doc = "I2C Interface Configuration and Control"]
-pub struct I2C {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for I2C {}
-impl I2C {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const i2c::RegisterBlock {
-        0x4000_0b00 as *const _
-    }
-}
-impl Deref for I2C {
-    type Target = i2c::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*I2C::ptr() }
-    }
-}
-#[doc = "I2C Interface Configuration and Control"]
-pub mod i2c;
-#[doc = "UART Interface Configuration and Control"]
-pub struct UART {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for UART {}
-impl UART {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const uart::RegisterBlock {
-        0x4000_0c00 as *const _
-    }
-}
-impl Deref for UART {
-    type Target = uart::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*UART::ptr() }
-    }
-}
-#[doc = "UART Interface Configuration and Control"]
-pub mod uart;
 #[doc = "PWM 0 and 1 Configuration and Control"]
 pub struct PWM {
     _marker: PhantomData<*const ()>,
@@ -649,18 +523,6 @@ pub struct Peripherals {
     pub FLASH: FLASH,
     #[doc = "DMA"]
     pub DMA: DMA,
-    #[doc = "DIO"]
-    pub DIO: DIO,
-    #[doc = "SPI0"]
-    pub SPI0: SPI0,
-    #[doc = "SPI1"]
-    pub SPI1: SPI1,
-    #[doc = "PCM"]
-    pub PCM: PCM,
-    #[doc = "I2C"]
-    pub I2C: I2C,
-    #[doc = "UART"]
-    pub UART: UART,
     #[doc = "PWM"]
     pub PWM: PWM,
     #[doc = "AUDIO"]
@@ -727,24 +589,6 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             DMA: DMA {
-                _marker: PhantomData,
-            },
-            DIO: DIO {
-                _marker: PhantomData,
-            },
-            SPI0: SPI0 {
-                _marker: PhantomData,
-            },
-            SPI1: SPI1 {
-                _marker: PhantomData,
-            },
-            PCM: PCM {
-                _marker: PhantomData,
-            },
-            I2C: I2C {
-                _marker: PhantomData,
-            },
-            UART: UART {
                 _marker: PhantomData,
             },
             PWM: PWM {
