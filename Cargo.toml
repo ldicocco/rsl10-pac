@@ -1,0 +1,17 @@
+[package]
+name = "rsl10-pac"
+version = "0.1.0"
+authors = ["Luciano Di Cocco"]
+edition = "2018"
+
+[dependencies]
+bare-metal = "0.2.5"
+cortex-m = "0.6.2"
+vcell = "0.1.2"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.6.12"
+
+[features]
+rt = ["cortex-m-rt/device"]
