@@ -1,6 +1,6 @@
 [package]
 name = "rsl10-pac"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Luciano Di Cocco <lu.dicocco@gmail.com>"]
 edition = "2018"
 
@@ -11,7 +11,7 @@ license       = "MIT"
 
 readme        = "README.md"
 categories    = ["embedded", "hardware-support", "no-std"]
-keywords      = ["arm", "cortex-m", "nxp", "lpc", "svd2rust"]
+keywords      = ["arm", "cortex-m", "ON Semiconductors", "rsl10", "svd2rust"]
 
 [dependencies]
 bare-metal = "0.2.5"
