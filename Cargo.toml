@@ -1,8 +1,17 @@
 [package]
 name = "rsl10-pac"
-version = "0.1.0"
-authors = ["Luciano Di Cocco"]
+version = "0.0.1"
+authors = ["Luciano Di Cocco <lu.dicocco@gmail.com>"]
 edition = "2018"
+
+description   = "Peripheral access API for the RSL10 microcontroller (generated using svd2rust)"
+documentation = "https://docs.rs/rsl10-pac"
+repository    = "https://github.com/ldicocco/rsl10-pac"
+license       = "MIT"
+
+readme        = "README.md"
+categories    = ["embedded", "hardware-support", "no-std"]
+keywords      = ["arm", "cortex-m", "nxp", "lpc", "svd2rust"]
 
 [dependencies]
 bare-metal = "0.2.5"
@@ -14,4 +23,4 @@ optional = true
 version = "0.6.12"
 
 [features]
-rt = ["cortex-m-rt/device"]
+rt = ["cortex-m-rt", "cortex-m-rt/device"]
